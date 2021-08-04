@@ -1,0 +1,35 @@
+.container {
+    background-color: #D3D3D3;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border-radius: 25px;
+}
+body{
+    background-color: #404040	;
+}
+h1{
+    text-align: center;
+}
+
+img{
+    display: none;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+input[type="image"]{
+    width: 100px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 30px;
+    border: black;
+}
+
+span{
+    display:table;
+    margin:0 auto;
+    font-size: xx-large;
+    
+}
