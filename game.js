@@ -63,7 +63,7 @@ function showComputerSelection(computer_selection){
 
     const computerImg = document.getElementById('computerImg');
     computerImg.style.display = 'block';
-    computerImg.src = computerSelection + '.png';
+    computerImg.src = "images/" + computerSelection + '.png';
 }
 
 function checkWinner(){
