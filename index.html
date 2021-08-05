@@ -12,18 +12,34 @@
 <body>
     <div class="container">
         <h1>Rock Paper Scissors</h1>
+        <span id="score">0 - 0</span>
+        <span id="wonlost">You won!</span>
         <div class="scoreConteiner">
-            <span id="score">0 - 0</span>
+        
+        <table>
+            <tr>
+                <th> Player</th>
+                <th>Computer</th>
+            </tr>
+            
+            <tr>
+                <td><img src="images/rock.png" id="playerImg"> </td>
+                 
+                <td><img src="images/paper.png" id="computerImg"> </td>
 
+            </tr>
+            
+              
+        </table>  
         </div>
-
+        <p>Click your move!</p>
         <div class="buttonsConteiner">
             <input type="image" src="images/rock.png" value="rock" >
             <input type="image" src="images/paper.png" value="paper" >
             <input type="image" src="images/scissors.png" value="scissors">
         </div>
-        <p>Computer Selection: </p>
-        <img src="images/rock.png" id="computerImg">
+        
+        
 
     </div>
 </body>

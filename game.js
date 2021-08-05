@@ -1,5 +1,6 @@
 let player_score = 0;
 let computer_score = 0;
+let result = "Lost!";
 
 
 function game(){
@@ -13,7 +14,7 @@ function game(){
             playerSelection = button.value;
 
             playRound(playerSelection, computerSelection);
-            showComputerSelection(computerSelection);
+            showSelections(playerSelection, computerSelection);
             updateScore();
             checkWinner();
             
@@ -36,22 +37,26 @@ function playRound(playerSelection, computerSelection) {
     if(playerSelection == computerSelection){
         player_score++;
         computer_score++; 
+        result = 'Tied!';
 
     }else if(playerSelection == 'rock'){
         if(computerSelection == 'scissors'){
-            player_score++; 
+            player_score++;
+            result = 'Won!';
         }else{
             computer_score++;
         }
     }else if(playerSelection == 'paper'){
         if(computerSelection == 'rock'){
             player_score++;
+            result = 'Won!';
         }else{
             computer_score++;
         }
     }else if(playerSelection == 'scissors'){
         if(computerSelection == 'paper'){
-            player_score++; 
+            player_score++;
+            result = 'Won!'; 
         }else{
             computer_score++;
         }
@@ -59,23 +64,37 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function showComputerSelection(computer_selection){
+function showSelections(playerSelection, computerSelection){
 
     const computerImg = document.getElementById('computerImg');
-    computerImg.style.display = 'block';
+    const playerImg = document.getElementById('playerImg');
+
+    computerImg.style.visibility = 'visible';
     computerImg.src = "images/" + computerSelection + '.png';
+
+    playerImg.style.visibility = 'visible';
+    playerImg.src = "images/" + playerSelection + '.png';
 }
 
 function checkWinner(){
 
-    if(player_score == 5){
-        alert('Player Won');
+    const wonlostSpan = document.getElementById('wonlost');
+
+    wonlostSpan.style.visibility = 'visible';
+
+    if(player_score == computer_score == 5){
+        wonlostSpan.innerHTML = "It's a draw!";
+
+    }else if(player_score == 5){
+        wonlostSpan.innerHTML = 'Player won the Computer!'
         player_score = 0;
         computer_score = 0;
     }else if(computer_score == 5){
-        alert('Computer Won');
+        wonlostSpan.innerHTML = 'Computer won the Player!';
         player_score = 0;
         computer_score = 0;
+    }else{
+        wonlostSpan.innerHTML = 'You ' + result;
     }
 }
 
@@ -83,5 +102,8 @@ function updateScore(){
 
     const scoreSpan = document.getElementById('score');
     scoreSpan.innerHTML = player_score + " - " + computer_score;
+
+    
+    
 }
 game();
