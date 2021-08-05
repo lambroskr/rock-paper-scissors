@@ -35,8 +35,6 @@ function computerPlay(){
 function playRound(playerSelection, computerSelection) {
 
     if(playerSelection == computerSelection){
-        player_score++;
-        computer_score++; 
         result = 'Tied!';
 
     }else if(playerSelection == 'rock'){
@@ -45,6 +43,7 @@ function playRound(playerSelection, computerSelection) {
             result = 'Won!';
         }else{
             computer_score++;
+            result = 'Lost!';
         }
     }else if(playerSelection == 'paper'){
         if(computerSelection == 'rock'){
@@ -52,6 +51,7 @@ function playRound(playerSelection, computerSelection) {
             result = 'Won!';
         }else{
             computer_score++;
+            result = 'Lost!';
         }
     }else if(playerSelection == 'scissors'){
         if(computerSelection == 'paper'){
@@ -59,6 +59,7 @@ function playRound(playerSelection, computerSelection) {
             result = 'Won!'; 
         }else{
             computer_score++;
+            result = 'Lost!';
         }
     }
 }
